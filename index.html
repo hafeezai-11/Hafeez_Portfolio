@@ -30,11 +30,11 @@
                 <!-- <a href="">
                     <li>Home</li>
                 </a> -->
-                <li><a href="#about">About</a></li>
-                <li><a href="#edu">Education</a></li>
-                <li><a href="#skl">Skills</a></li>
-                <li><a href="#pro">Projects</a></li>
-                <li><a href="#cont">Contact</a></li>
+               <li onclick="closeMenu()"><a href="#about">About</a></li>
+                <li onclick="closeMenu()"><a href="#edu">Education</a></li>
+                <li onclick="closeMenu()"><a href="#skl">Skills</a></li>
+                <li onclick="closeMenu()"><a href="#pro">Projects</a></li>
+                <li onclick="closeMenu()"><a href="#cont">Contact</a></li>
             </ul>
         </div>
 
@@ -187,6 +187,11 @@
     // Remove the download link from the DOM
     document.body.removeChild(downloadLink);
 }
+
+    function closeMenu() {
+    var checkbox = document.getElementById('check');
+        checkbox.checked = false;
+    }
 </script>
 </body>
 
