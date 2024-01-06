@@ -228,6 +228,7 @@ ul li a:hover {
     justify-items: center;
     row-gap: 5vh;
     column-gap: 5px;
+     padding: 1rem;
 }
 
 .item {
