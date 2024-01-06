@@ -82,37 +82,8 @@
         <div class="skl" id="skl">
             <br> <br>
             <h3>Skills</h3>
-            <div class="SCont">
-                <div class="item">
-                    <!-- <img src="image/android-fill.png" alt=""> -->
-                    <i class="fa-brands fa-android fa-2xl"></i>
-                    <p>Android</p>
-                </div>
-                <div class="item">
-                    <!-- <img src="image/html5-fill (1).png" alt=""> -->
-                    <i class="fa-brands fa-html5 fa-2xl"></i>
-                    <p>HTML</p>
-                </div>
-                <div class="item">
-                    <!-- <img src="image/css3-fill.png" alt=""> -->
-                    <i class="fa-brands fa-css3-alt fa-2xl"></i>
-                    <p>CSS</p>
-                </div>
-                <div class="item">
-                    <!-- <img src="image/javascript-fill.png" alt=""> -->
-                    <i class="fa-brands fa-js fa-2xl"></i>
-                    <p>Javascript</p>
-                </div>
-                <div class="item">
-                    <!-- <img src="" alt=""> -->
-                    <i class="fa-solid fa-database fa-2xl"></i>
-                    <p style="margin-top: 2vh;">MySQL</p>
-                </div>
-                <div class="item">
-                    <i class="fa-brands fa-python fa-2xl"></i>
-                    <!-- <img src="" alt=""> -->
-                    <p style="margin-top: 2vh;">Python</p>
-                </div>
+            <div class="SCont" id="SCont">
+                
             </div>
 
         </div>
@@ -167,6 +138,26 @@
 
 
 <script>
+     // For Skills list using array 
+        let divHtml = '';
+        // This is image of skills
+        let img =
+            ['<i class="fa-brands fa-android fa-2xl"></i>',
+                '<i class="fa-brands fa-html5 fa-2xl"></i>',
+                '<i class="fa-brands fa-css3-alt fa-2xl"></i>',
+                '<i class="fa-brands fa-js fa-2xl"></i>',
+                '<i class="fa-solid fa-database fa-2xl"></i>',
+                '<i class="fa-brands fa-python fa-2xl"></i>',
+            ];
+        let txt = ['Android', 'Html', 'CSS', 'Javascript',
+            'MySQL', 'Python'];
+        for (let i = 0; i < txt.length; i++) {
+            divHtml += `<div class='item'>${img[i]}
+                <p style="margin-top: 2vh;">${txt[i]}</p>
+                </div>
+            `;
+        }
+        document.getElementById('SCont').innerHTML = divHtml;
     function downloadResume() {
     // Replace 'path/to/your/resume.pdf' with the actual path to your resume file
     var resumePath = 'cv.pdf';
