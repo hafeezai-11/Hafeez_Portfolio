@@ -275,7 +275,7 @@ ul li a:hover {
 }
 
 .pro_item {
-   row-gap: 2vh;
+   row-gap: 5vh;
     padding: 1rem;
     display: grid;
     justify-content: center;
