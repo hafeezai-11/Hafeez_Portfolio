@@ -83,7 +83,7 @@
             <br> <br>
             <h3>Skills</h3>
             <div class="SCont" id="SCont">
-                
+                 <!-- This Section Add the element using JS -->
             </div>
 
         </div>
@@ -93,20 +93,9 @@
     <div class="pro" id="pro">
         <br> <br>
         <h3>Projects</h3>
-        <div class="pro_item">
-            <div class="pros">
-                <h1>BloodHelpTpt</h1>
-                <p>(Android Application)</p>
-                <p>Android Application of Blood bank for the small district
-                    used to manage blood and Visualize the usage of blood
-                    using data science</p>
-            </div>
-            <div class="pros">
-                <h1>BeHealthy</h1>
-                <p>(Android Application)</p>
-                <p>Android Application that show the healthy food based on
-                    the age and weight and user can order the food easily</p>
-            </div>
+       <div class="pro_item" id="pro_item">
+            <!-- This Section Add the element using JS -->
+
         </div>
         <br> <br><br>
     </div>
@@ -138,54 +127,118 @@
 
 
 <script>
-     // For Skills list using array 
+        // For Skills list using array 
         let divHtml = '';
-        // This is image of skills
-        let img =
-            ['<i class="fa-brands fa-android fa-2xl"></i>',
-                '<i class="fa-brands fa-html5 fa-2xl"></i>',
-                '<i class="fa-brands fa-css3-alt fa-2xl"></i>',
-                '<i class="fa-brands fa-js fa-2xl"></i>',
-                '<i class="fa-solid fa-database fa-2xl"></i>',
-                '<i class="fa-brands fa-python fa-2xl"></i>',
-            ];
-        let txt = ['Android', 'Html', 'CSS', 'Javascript',
-            'MySQL', 'Python'];
-        for (let i = 0; i < txt.length; i++) {
-            divHtml += `<div class='item'>${img[i]}
-                <p style="margin-top: 2vh;">${txt[i]}</p>
+        
+        // This is the List of skills that need to be display
+        let skl = [
+            {
+                img : '<i class="fa-brands fa-android fa-2xl"></i>',
+                txt : 'Android'
+            },
+            {
+                img : '<i class="fa-brands fa-html5 fa-2xl"></i>',
+                txt : 'HTML'
+            },
+            {
+                img : '<i class="fa-brands fa-css3-alt fa-2xl"></i>',
+                txt : 'CSS'
+            },
+            {
+                img: '<i class="fa-brands fa-js fa-2xl"></i>',
+                txt : 'Javascript'
+            },
+            {
+                img :  '<i class="fa-solid fa-database fa-2xl"></i>',
+                txt : 'MySQL'
+            },
+            {
+                img : '<i class="fa-brands fa-python fa-2xl"></i>',
+                txt : 'Python'
+            },
+           
+        ];
+
+       
+        for (let i = 0; i < skl.length; i++) {
+            divHtml += `<div class='item'>${skl[i].img}
+                <p style="margin-top: 2vh;">${skl[i].txt}</p>
                 </div>
             `;
         }
         document.getElementById('SCont').innerHTML = divHtml;
-    function downloadResume() {
-    // Replace 'path/to/your/resume.pdf' with the actual path to your resume file
-    var resumePath = 'cv.pdf';
 
-    // Create a temporary anchor element
-    var downloadLink = document.createElement('a');
-    
-    // Set the download link's href attribute to the path of the resume file
-    downloadLink.href = resumePath;
 
-    // Set the download attribute with a suggested filename for the download
-    downloadLink.download = 'Hafeez_resume.pdf';
+        // For the list of Project list
+        let ProHtml = '';
+        // List of Project
+        let ProArr = [
+            {
+                name : 'BloodHelpTpt',
+                type : '(Android Application)',
+                dec : `Android Application of Blood bank for the small district
+                    used to manage blood and Visualize the usage of blood
+                    using data science`
 
-    // Append the download link to the body
-    document.body.appendChild(downloadLink);
+            },
+            {
+                name : 'BeHealthy',
+                type : '(Android Application)',
+                dec : `Android Application that show the healthy food based on
+                    the age and weight and user can order the food easily`
 
-    // Trigger a click event on the download link
-    downloadLink.click();
+            },
+            {
+                name : 'Personal Portfolio',
+                type : '(Web Application)',
+                dec :`A Personal Portfolio contain all detail about me and it create
+                in Responsive manner that it should be suitable for all the screen`
+            }
+        ];
 
-    // Remove the download link from the DOM
-    document.body.removeChild(downloadLink);
-}
+        // Loop for diplaying the element
+        for (let i=0; i< ProArr.length;i++){
+            ProHtml += `<div class="pros">
+                <h1>${ProArr[i].name}</h1>
+                <p>${ProArr[i].type}</p>
+                <p>${ProArr[i].dec}</p>
+                </div> <br/>`;
+        }
 
-    function closeMenu() {
-    var checkbox = document.getElementById('check');
-        checkbox.checked = false;
-    }
-</script>
+        document.getElementById('pro_item').innerHTML = ProHtml;
+
+
+
+
+        function downloadResume() {
+            // Replace 'path/to/your/resume.pdf' with the actual path to your resume file
+            var resumePath = 'cv.pdf';
+
+            // Create a temporary anchor element
+            var downloadLink = document.createElement('a');
+
+            // Set the download link's href attribute to the path of the resume file
+            downloadLink.href = resumePath;
+
+            // Set the download attribute with a suggested filename for the download
+            downloadLink.download = 'Hafeez_resume.pdf';
+
+            // Append the download link to the body
+            document.body.appendChild(downloadLink);
+
+            // Trigger a click event on the download link
+            downloadLink.click();
+
+            // Remove the download link from the DOM
+            document.body.removeChild(downloadLink);
+        }
+
+
+        function closeMenu() {
+            var checkbox = document.getElementById('check');
+            checkbox.checked = false;
+        }
+    </script>
 </body>
 
 </html>
